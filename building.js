@@ -64,9 +64,6 @@ window.onload = function init()
     document.getElementById( "yButton" ).onclick = function () {
         axis = yAxis;
     };
-    document.getElementById( "zButton" ).onclick = function () {
-        axis = zAxis;
-    };
 
     render();
 }
@@ -89,14 +86,14 @@ function quad(a, b, c, d)
         Added 20 to each vertex point to make shape fit the page better.
     */
     var vertices = [
-        vec4( -.70 , -0.37,  0.48, 1.0 ),
-        vec4( -.70,  0.37,  0.48, 1.0 ),
-        vec4(  .70 ,  0.37,  0.48, 1.0 ),
-        vec4(  .70 , -0.37,  0.48, 1.0 ),
+        vec4( -0.70 , -0.37,  0.48, 1.0 ),
+        vec4( -0.70,  0.37,  0.48,  1.0 ),
+        vec4(  0.70 ,  0.37,  0.48, 1.0 ),
+        vec4(  0.70 , -0.37,  0.48, 1.0 ),
         vec4( -0.70, -0.37, -0.48, 1.0 ),
         vec4( -0.70,  0.37, -0.48, 1.0 ),
-        vec4(  .70 ,  0.37, -0.48, 1.0 ),
-        vec4(  .70 , -0.37, -0.48, 1.0 )
+        vec4(  0.70 ,  0.37, -0.48, 1.0 ),
+        vec4(  0.70 , -0.37, -0.48, 1.0 )
     ];
 
     var vertexColors = [
