@@ -83,15 +83,20 @@ function colorCube()
 
 function quad(a, b, c, d)
 {
+    /*Google Earth Dimensions: 98m x 56m x 34m
+        Calculation: Took dimensions and divided by two since each vertex 
+        is '+' or '-' the origin.
+        Added 20 to each vertex point to make shape fit the page better.
+    */
     var vertices = [
-        vec4( -0.5, -0.5,  0.5, 1.0 ),
-        vec4( -0.5,  0.5,  0.5, 1.0 ),
-        vec4(  0.5,  0.5,  0.5, 1.0 ),
-        vec4(  0.5, -0.5,  0.5, 1.0 ),
-        vec4( -0.5, -0.5, -0.5, 1.0 ),
-        vec4( -0.5,  0.5, -0.5, 1.0 ),
-        vec4(  0.5,  0.5, -0.5, 1.0 ),
-        vec4(  0.5, -0.5, -0.5, 1.0 )
+        vec4( -.70 , -0.37,  0.48, 1.0 ),
+        vec4( -.70,  0.37,  0.48, 1.0 ),
+        vec4(  .70 ,  0.37,  0.48, 1.0 ),
+        vec4(  .70 , -0.37,  0.48, 1.0 ),
+        vec4( -0.70, -0.37, -0.48, 1.0 ),
+        vec4( -0.70,  0.37, -0.48, 1.0 ),
+        vec4(  .70 ,  0.37, -0.48, 1.0 ),
+        vec4(  .70 , -0.37, -0.48, 1.0 )
     ];
 
     var vertexColors = [
@@ -127,7 +132,7 @@ function render()
 {
     gl.clear( gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
 
-    theta[axis] += 2.0;
+    theta[axis] += 0.2;
     gl.uniform3fv(thetaLoc, theta);
 
     gl.drawArrays( gl.TRIANGLES, 0, NumVertices );
