@@ -10,7 +10,6 @@ var colors = [];
 
 var xAxis = 0;
 var yAxis = 1;
-var zAxis = 2;
 
 var axis = 0;
 var theta = [ 0, 0, 0 ];
