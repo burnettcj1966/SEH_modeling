@@ -120,7 +120,6 @@ function quad(a, b, c, d)
 
     for ( var i = 0; i < indices.length; ++i ) {
         points.push( vertices[indices[i]] );
-        //colors.push( vertexColors[indices[i]] );
 
         // for solid colored faces use
         colors.push(vertexColors[a]);
@@ -132,6 +131,7 @@ function render()
 {
     gl.clear( gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
 
+    //Make a 90 degree rotation depending on selected axis. 180 * .50 = 90 degrees
     if (numMoves < 180) {
         theta[axis] += .50;
         numMoves++;
