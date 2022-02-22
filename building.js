@@ -16,6 +16,8 @@ var theta = [ 0, 0, 0 ];
 
 var thetaLoc;
 
+var numMoves;
+
 window.onload = function init()
 {
     canvas = document.getElementById( "gl-canvas" );
@@ -59,9 +61,11 @@ window.onload = function init()
 
     document.getElementById( "xButton" ).onclick = function () {
         axis = xAxis;
+        numMoves = 0;
     };
     document.getElementById( "yButton" ).onclick = function () {
         axis = yAxis;
+        numMoves = 0;
     };
 
     render();
@@ -128,7 +132,11 @@ function render()
 {
     gl.clear( gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
 
-    theta[axis] += 0.2;
+    if (numMoves < 180) {
+        theta[axis] += .50;
+        numMoves++;
+    }
+
     gl.uniform3fv(thetaLoc, theta);
 
     gl.drawArrays( gl.TRIANGLES, 0, NumVertices );
